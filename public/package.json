@@ -1,0 +1,9 @@
+{
+  "name": "taglend",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "git://github.com/fatuk/grunt-contrib-less.git#2b0a730d0cddaaaa304e65cfc7cdf9ee7158b232",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}

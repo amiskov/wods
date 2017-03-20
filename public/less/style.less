@@ -1,0 +1,343 @@
+body { font-family: "SegoeUILight", sans-serif; }
+
+
+
+@font-face{
+    font-family: 'SegoeUILight';
+    src:url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot');
+    src:url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.eot?#iefix') format('embedded-opentype'),
+    url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.woff') format('woff'),
+    url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.ttf') format('truetype'),
+    url('http://i.s-microsoft.com/fonts/Segoe-UI/Cyrillic/Light/latest.svg#web') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+/////* Info */
+////.info {
+////    text-align: center;
+////    margin-top: 30px;
+////}
+//
+//.exercises-counter {
+//    position: absolute;
+//    margin: 10px 10px;
+//    height: 20px;
+//    vertical-align: middle;
+//    text-align: center;
+//    bottom: -40px;
+//    right: -30px;
+//    width: 100px;
+//}
+
+//.add-exercise {
+//    position: absolute;
+//    right: 10px;
+//    top: 0;
+//}
+//
+//.exclude-exercise {
+//    top: 0;
+//    position: absolute;
+//    left: 15px;
+//}
+
+
+.loader {
+//    position: absolute;
+//    left: 0;
+//    background: #5cb85c;
+//    background: linear-gradient(to bottom, #c9de96 0%, #8ab66b 44%, #398235 100%);
+//    top: 0;
+//    bottom: 0;
+//    z-index: 1;
+//    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3),
+//    1px 1px 5px rgba(0, 0, 0, .3);
+}
+
+.preloader {
+//    opacity: .5;
+//    position: absolute;
+//    border-radius: 5px;
+//    right: 0;
+//    top: 0;
+//    bottom: 0;
+//    background: linear-gradient(to bottom, rgba(254, 255, 255, 1) 0%, rgba(221, 241, 249, 1) 35%, rgba(160, 216, 239, 1) 100%);
+//    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3);
+//    z-index: 0;
+    //    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3);
+}
+
+.current {
+//    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3);
+    background: #CCC url(../img/jump.gif) no-repeat 0 center;
+    .number {
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        text-indent: -999px;
+    }
+}
+
+.clearfix {
+    .clearfix();
+}
+
+@numberWidth: 27px;
+.wod {
+    &:extend(.clearfix all);
+    &__video {
+        margin-right: (300px + @numberWidth);
+        background: #EEE;
+        iframe {
+            vertical-align: bottom;
+        }
+    }
+    &__title {
+        margin: 0;
+        background: #000;
+        color: #FFF;
+        &:extend(.clearfix all);
+        padding: 5px;
+        line-height: 1.4;
+        margin-left: -@numberWidth;
+        h2 {
+            font-weight: normal;
+            margin: 0;
+            font-size: inherit;
+            vertical-align: middle;
+        }
+    }
+    .total-time {
+        margin: 0 0 10px 10px;
+        vertical-align: middle;
+        span {
+            background: url(../img/ico_clock.svg) no-repeat 0 center;
+            background-size: 16px;
+            font-size: 16px;
+            line-height: 16px;
+            padding: 0 20px;
+        }
+    }
+    &__list {
+        width: 300px;
+        float: right;
+        .title {
+            position: relative;
+            z-index: 3;
+        }
+        .time {
+            float: right;
+            font-style: italic;
+            position: relative;
+            z-index: 3;
+            font-size: .8em;
+            top: .3em;
+            margin-right: .2em;
+        }
+
+        ol {
+            position: relative;
+            margin: 0 0 20px -@numberWidth;
+            padding: 0;
+            border-bottom: 1px solid #CCC;
+            li {
+                position: relative;
+                border-top: 1px solid #CCC;
+                overflow: hidden;
+                padding: 3px 10px 3px (@numberWidth + 3px);
+                margin: 0;
+            }
+            .number {
+                position: absolute;
+                margin-left: -@numberWidth;
+                text-align: right;
+                width: 1.6em;
+                color: #666;
+            }
+        }
+        .buttons {
+            text-align: center;
+            margin-left: -@numberWidth;
+            padding-bottom: 20px;
+            .btn {
+                background: linear-gradient(to bottom, #eee 0%, #ccc 100%);
+                text-shadow: 1px 1px #FFF;
+                border: 1px solid #BBB;
+                padding: 15px 10px;
+                border-radius: 5px;
+                width: 90%;
+                font-size: 18px;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, .3);
+                &_start {
+                }
+                &_stop {
+                    color: #c00;
+                    display: none;
+                }
+                &:focus {
+                    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3);
+                    outline: none;
+                }
+            }
+
+        }
+        .done {
+            .text {
+                text-decoration: line-through;
+            }
+            .time {
+                text-decoration: line-through;
+            }
+        }
+        .rest-item {
+            height: 10px;
+            background: #f00;
+            display: block;
+        }
+    }
+
+}
+
+
+/* Progress bar */
+.progress {
+    text-align: center;
+    color: #FFF;
+    background: linear-gradient(to bottom, rgba(200, 200, 200, 1) 0%, rgba(150, 150, 150, 1) 100%);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &__time {
+        position: relative;
+        z-index: 1;
+        line-height: 90px;
+        font-size: 60px;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #000;
+    }
+    &__bar {
+        z-index: 0;
+        position: absolute;
+        transition: width .3s;
+        top: 0;
+        bottom: 0;
+        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, .3),
+        1px 1px 2px rgba(0, 0, 0, .3);
+        &_work {
+            background: linear-gradient(to bottom, rgba(41, 154, 11, 1) 0%, rgba(41, 154, 11, 1) 100%);
+            left: 0;
+        }
+        &_rest {
+            background: linear-gradient(to bottom, rgba(255, 48, 25, 1) 0%, rgba(207, 4, 4, 1) 100%);
+            left: 0;
+        }
+    }
+}
+
+
+
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px;
+//    position: relative;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    height: 142px;
+}
+.site-footer {
+//    background: orange;
+    position: relative;
+}
+.action-title {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+// Start
+// List of all workouts
+.wods {
+    &__list {
+        &:extend(.clearfix all);
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    &__link {
+        display: block;
+        position: relative;
+        color: #000;
+        padding: 5px;
+        &:hover {
+            .time {
+                opacity: 1;
+            }
+        }
+    }
+    &__item {
+        float: left;
+        font-size: 12px;
+    }
+    img {
+        vertical-align: bottom;
+    }
+    .number {
+        display: inline-block;
+        text-align: right;
+        width: 1.3em;
+    }
+    .time {
+        position: absolute;
+        right: 15px;
+        border-radius: 10px;
+        opacity: .65;
+        bottom: 15px;
+        background: #FFF url(../img/ico_clock.svg) no-repeat 3px center;
+        background-size: 16px;
+        line-height: 16px;
+        padding: 3px 3px 3px 23px;
+        transition: opacity 0.3s;
+    }
+
+    .wod {
+        &__exercises {
+            display: none;
+        }
+    }
+}
+
+
+
+
+
